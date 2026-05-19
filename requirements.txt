@@ -1,33 +1,25 @@
-# ============================================================
-# Elektron Hisob-Faktura Tizimi - Kutubxonalar ro'yxati
-# ============================================================
-
 # --- Web Framework ---
-fastapi==0.111.0          # Asosiy web framework
-uvicorn[standard]==0.29.0 # ASGI server (lokal ishlab chiqish uchun)
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
 
 # --- Production Server ---
-gunicorn==22.0.0          # Render.com uchun production server
+gunicorn==21.2.0
 
 # --- Ma'lumotlar bazasi ---
-sqlalchemy==2.0.30        # ORM (Object-Relational Mapping)
-psycopg2-binary==2.9.9    # PostgreSQL drayveri
-alembic==1.13.1           # Ma'lumotlar bazasi migratsiyasi
+sqlalchemy==2.0.27
+psycopg2-binary==2.9.9
+alembic==1.13.1
 
 # --- Konfiguratsiya ---
-pydantic==2.7.1           # Ma'lumotlar validatsiyasi
-pydantic-settings==2.2.1  # .env fayl orqali sozlamalar
-python-dotenv==1.0.1      # .env faylni o'qish
+pydantic==2.6.1
+pydantic-settings==2.1.0
+python-dotenv==1.0.1
 
 # --- Xavfsizlik ---
-python-jose[cryptography]==3.3.0  # JWT tokenlar
-passlib[bcrypt]==1.7.4            # Parolni xeshlash
-bcrypt==4.0.1                     # passlib 1.7.4 bilan mos versiya
-python-multipart==0.0.9           # Form ma'lumotlarini qabul qilish
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+bcrypt==4.0.1
+python-multipart==0.0.9
 
 # --- HTTP klient ---
-httpx==0.27.0             # Asinxron HTTP so'rovlar (testlar uchun)
-
-# --- Testlar ---
-pytest==8.2.0             # Test framework
-pytest-asyncio==0.23.6    # Asinxron testlar uchun
+httpx==0.27.0
