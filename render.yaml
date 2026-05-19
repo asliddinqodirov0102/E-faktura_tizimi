@@ -1,0 +1,25 @@
+# ============================================================
+# render.yaml — Render.com deployment konfiguratsiyasi
+# Bu fayl Render.com'ga avtomatik joylashtirishni sozlaydi.
+# ============================================================
+
+services:
+  - type: web
+    name: elektron-hisob-faktura-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app.main:app -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:$PORT --workers 2 --timeout 120
+    envVars:
+      - key: DATABASE_URL
+        sync: false          # Render dashboard'dan qo'lda kiritiladi
+      - key: SECRET_KEY
+        generateValue: true  # Render avtomatik yaratadi
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 30
+      - key: DEBUG
+        value: false
+      - key: ALLOWED_ORIGINS
+        value: "*"           # Frontend deploy bo'lgach aniq URL bering
+    healthCheckPath: /health  # Render shu URL orqali tizim holatini tekshiradi

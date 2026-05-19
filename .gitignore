@@ -1,0 +1,53 @@
+# ============================================================
+# .gitignore — GitHub'ga yuklanmasligi kerak bo'lgan fayllar
+# ============================================================
+
+# --- Muhit o'zgaruvchilari (MAXFIY!) ---
+.env
+*.env
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Virtual muhit ---
+.venv
+venv
+env
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Ma'lumotlar bazasi ---
+*.db
+*.sqlite3
+
+# --- Log fayllar ---
+*.log
+logs/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Pytest ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Alembic (agar ishlatilsa) ---
+# alembic/versions/*.py   <- Bu qatorni o'chirib tashlang
